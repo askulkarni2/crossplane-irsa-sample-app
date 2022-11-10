@@ -1,6 +1,8 @@
 ---
 apiVersion: awsblueprints.io/v1alpha1
 kind: XIRSA
+metadata:
+  name: "s3-ls-irsa"
 spec:
   awsAccountID: "829527579886"
   eksOIDC: oidc.eks.us-east-1.amazonaws.com/id/8CA6195845CF282B3E5B1B605F5C9E75
