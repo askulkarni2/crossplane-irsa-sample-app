@@ -2,7 +2,7 @@
 apiVersion: awsblueprints.io/v1alpha1
 kind: XIRSA
 spec:
-  awsAccountID: 829527579886
+  awsAccountID: "829527579886"
   eksOIDC: oidc.eks.us-east-1.amazonaws.com/id/8CA6195845CF282B3E5B1B605F5C9E75
   policyArns:
     - "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"
