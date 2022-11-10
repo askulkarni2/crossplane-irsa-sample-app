@@ -9,6 +9,10 @@ spec:
   serviceAccountName: "s3-ls"
   resourceConfig:
     providerConfigName: aws-provider-config
+    region: us-east-1
+    tags:
+      - key: env
+        value: test
 ---
 apiVersion: apps/v1
 kind: Deployment
