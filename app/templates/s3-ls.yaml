@@ -1,6 +1,6 @@
 ---
 apiVersion: awsblueprints.io/v1alpha1
-kind: XIRSA
+kind: IRSA
 metadata:
   name: "s3-ls-irsa"
 spec:
