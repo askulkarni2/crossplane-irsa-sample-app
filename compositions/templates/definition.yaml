@@ -27,10 +27,8 @@ spec:
                   type: string
                 permissionsBoundaryArn:
                   type: string
-                policyArns:
-                  items:
-                    type: string
-                  type: array
+                policyArn:
+                  type: string
                 resourceConfig:
                   description: ResourceConfig defines general properties of this AWS
                     resource.
@@ -71,7 +69,7 @@ spec:
               required:
               - awsAccountID
               - eksOIDC
-              - policyArns
+              - policyArn
               - resourceConfig
               type: object
             status:

@@ -76,7 +76,7 @@ spec:
         - type: PatchSet
           patchSetName: common-fields
         - type: FromCompositeFieldPath
-          fromFieldPath: spec.policyArns[0]
+          fromFieldPath: spec.policyArn
           toFieldPath: spec.forProvider.policyArn
     - name: service-account
       base:
