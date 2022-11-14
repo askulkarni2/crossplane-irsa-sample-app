@@ -4,7 +4,6 @@ kind: IRSA
 metadata:
   name: "s3-ls-irsa"
   namespace: default
-  argocd.argoproj.io/tracking-id: tracking-for-argocd
 spec:
   awsAccountID: "829527579886"
   eksOIDC: oidc.eks.us-east-1.amazonaws.com/id/8CA6195845CF282B3E5B1B605F5C9E75
@@ -23,7 +22,6 @@ kind: Deployment
 metadata:
   name: s3-ls
   namespace: default
-  argocd.argoproj.io/tracking-id: tracking-for-argocd
   labels:
     app: s3-ls
 spec:
