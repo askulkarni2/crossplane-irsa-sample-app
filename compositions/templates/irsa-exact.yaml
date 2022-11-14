@@ -78,21 +78,6 @@ spec:
         - type: FromCompositeFieldPath
           fromFieldPath: spec.policyArns[0]
           toFieldPath: spec.forProvider.policyArn
-    - name: policy-attachment-2
-      base:
-        apiVersion: iam.aws.crossplane.io/v1beta1
-        kind: RolePolicyAttachment
-        spec:
-          forProvider:
-            policyArn: ""
-            roleNameSelector:
-              matchControllerRef: true
-      patches:
-        - type: PatchSet
-          patchSetName: common-fields
-        - type: FromCompositeFieldPath
-          fromFieldPath: spec.policyArns[1]
-          toFieldPath: spec.forProvider.policyArn
     - name: service-account
       base:
         apiVersion: kubernetes.crossplane.io/v1alpha1
