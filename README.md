@@ -33,21 +33,12 @@ argocd app create crossplane-compositions \
 
 #### Create values.yaml
 
-Edit the file to replace `awsAccountID`, `eksOIDC` and `region`.
-
-```sh
-cat <<EOF >> app/values.yaml
-awsAccountID: "XXXXXXXXXX"
-eksOIDC: "oidc-provider/oidc.eks.REGION.amazonaws.com/id/XXXXXXXXXXXXX"
-region: "REGION"
-EOF
-```
+Edit the `s3-la.yaml` template file to replace `awsAccountID`, `eksOIDC` and `region` with your custom values.
 
 #### Create Sample App
 ```sh
 argocd app create workload \
     --repo https://github.com/askulkarni2/crossplane-irsa-sample-app \
     --dest-server https://kubernetes.default.svc  \
-    --values app/values.yaml \
     --path app --sync-policy=auto --self-heal
 ```

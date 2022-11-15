@@ -6,7 +6,7 @@ metadata:
   namespace: default
 spec:
   awsAccountID: "829527579886" #REPLACE
-  eksOIDC: "oidc-provider/oidc.eks.us-east-1.amazonaws.com/id/8CA6195845CF282B3E5B1B605F5C9E75" #REPLACE
+  eksOIDC: "oidc.eks.us-east-1.amazonaws.com/id/8CA6195845CF282B3E5B1B605F5C9E75" #REPLACE
   policyArn: "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"
   serviceAccountName: "s3-ls"
   resourceConfig:
