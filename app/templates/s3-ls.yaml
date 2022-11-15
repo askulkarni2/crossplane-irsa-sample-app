@@ -5,13 +5,13 @@ metadata:
   name: "s3-ls-irsa"
   namespace: default
 spec:
-  awsAccountID: {{ .Values.awsAccountID }}
-  eksOIDC: {{ .Values.eksOIDC }}
+  awsAccountID: "829527579886" #REPLACE
+  eksOIDC: "oidc-provider/oidc.eks.us-east-1.amazonaws.com/id/8CA6195845CF282B3E5B1B605F5C9E75" #REPLACE
   policyArn: "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"
   serviceAccountName: "s3-ls"
   resourceConfig:
     providerConfigName: default
-    region: {{ .Values.region }}
+    region: us-east-1 #REPLACE
     tags:
       - key: env
         value: test
