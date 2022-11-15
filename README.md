@@ -5,7 +5,7 @@
 1. EKS cluster with OIDC enabled
 2. [Crossplane](https://crossplane.io/docs/v1.9/getting-started/install-configure.html) running on the cluster
 3. [Crossplane AWS provider](https://marketplace.upbound.io/providers/crossplane-contrib/provider-aws/v0.33.0) running on the cluster
-2. ArgoCD running on the cluster
+2. Latest ArgoCD running on the cluster
 3. ArgoCD installed on local dev machine
 
 ## Setup
@@ -20,6 +20,17 @@ kubectl port-forward svc/argo-cd-argocd-server -n argocd 8080:443
 
 ```sh
 argocd login localhost:8080
+```
+
+### ArgoCD ConfigMap
+
+Argo CD uses the argocd.argoproj.io/tracking-id annotation to track application resources. To actually select your preferred tracking method edit the resourceTrackingMethod value contained inside the `argocd-cm` configmap.
+
+```yaml
+apiVersion: v1
+data:
+  application.resourceTrackingMethod: annotation
+kind: ConfigMap
 ```
 
 ### Create Crossplane Compositions
