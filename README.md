@@ -22,6 +22,9 @@ argocd login localhost:8080
 
 ### Create Crossplane Compositions
 
+Here, we create a Crossplane composition for IRSA called XIRSA as an argocd application so we can manage them via gitops. See Crossplane documentation for more information on [Compositions](https://crossplane.io/docs/v1.9/concepts/composition.html). Crossplane compositions are cluster scoped resources.
+
+
 ```sh
 argocd app create crossplane-compositions \
     --repo https://github.com/askulkarni2/crossplane-irsa-sample-app \
@@ -29,13 +32,12 @@ argocd app create crossplane-compositions \
     --path compositions --sync-policy=auto --self-heal
 ```
 
-### Create Sample app
+### Create Sample App
 
-#### Create values.yaml
+Here we create a namespace scoped claim to create an IRSA for our demo app that does `aws s3 ls` in a loop. 
+It uses a service account called `s3-ls` that has the annotation for IRSA role with a `AmazonS3ReadOnlyAccess` managed policy. 
 
-Edit the `s3-la.yaml` template file to replace `awsAccountID`, `eksOIDC` and `region` with your custom values.
 
-#### Create Sample App
 ```sh
 argocd app create workload \
     --repo https://github.com/askulkarni2/crossplane-irsa-sample-app \
