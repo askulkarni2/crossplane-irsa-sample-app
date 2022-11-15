@@ -3,7 +3,9 @@
 ## Pre-Requisites
 
 1. EKS cluster with OIDC enabled
-2. ArgoCD running in the cluster
+2. [Crossplane](https://crossplane.io/docs/v1.9/getting-started/install-configure.html) running on the cluster
+3. [Crossplane AWS provider](https://marketplace.upbound.io/providers/crossplane-contrib/provider-aws/v0.33.0) running on the cluster
+2. ArgoCD running on the cluster
 3. ArgoCD installed on local dev machine
 
 ## Setup
