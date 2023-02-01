@@ -1,6 +1,6 @@
 # IRSA using Crossplane and ArgoCD (GitOps Approach)
 
-## Pre-Requisites
+### Pre-Requisites
 
 1. EKS cluster with OIDC enabled
 2. [Crossplane](https://crossplane.io/docs/v1.9/getting-started/install-configure.html) running on the cluster
